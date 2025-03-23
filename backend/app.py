@@ -198,7 +198,7 @@ def generate_scheme():
         baseScheme.paste(teamLogo, (1050, logoYPos[stream.index(game)] - (int((float(teamLogo.size[1]))) // 2)), mask=teamLogo)
 
     dateString = date.lower().replace(' ', '-')
-    baseScheme.save(f'scheme-{dateString}.png')
+    baseScheme.save(f'{app.static_folder}/../backend/scheme-{dateString}.png')
 
     try:
         return send_file(f'{app.static_folder}/../backend/scheme-{dateString}.png', download_name="scheme.png", as_attachment=True)
