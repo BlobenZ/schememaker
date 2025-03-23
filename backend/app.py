@@ -201,7 +201,7 @@ def generate_scheme():
     dateString = date.lower().replace(' ', '-')
     #baseScheme.save(f'{app.static_folder}/../backend/scheme-{dateString}.png')
     schemeByte = io.BytesIO()
-    baseScheme.save(schemeByte, format=format)
+    baseScheme.save(schemeByte, 'PNG', quality=70)
     schemeByte.seek(0)
 
     try:
