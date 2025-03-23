@@ -180,17 +180,18 @@ def generate_scheme():
         draw.text(text_pos, text, teamNameTextColor, font=font_teams)
 
     #Print team logos
+    teamLogosPath = app.static_folder + "/../backend/TeamLogos/"
     logoYPos = [280, 450, 640, 830]
     for game in stream:
         base_width = 150
         #Left side
-        teamLogo = Image.open('TeamLogos/' + getFileFromName(game[1]))
+        teamLogo = Image.open(teamLogosPath + getFileFromName(game[1]))
         wpercent = (base_width / float(teamLogo.size[0]))
         hsize = int((float(teamLogo.size[1]) * float(wpercent)))
         teamLogo = teamLogo.resize((base_width, hsize), Image.Resampling.LANCZOS)
         baseScheme.paste(teamLogo, (200, logoYPos[stream.index(game)] - (int((float(teamLogo.size[1]))) // 2)), mask=teamLogo)
         #Right side
-        teamLogo = Image.open('TeamLogos/' + getFileFromName(game[2]))
+        teamLogo = Image.open(teamLogosPath + getFileFromName(game[2]))
         wpercent = (base_width / float(teamLogo.size[0]))
         hsize = int((float(teamLogo.size[1]) * float(wpercent)))
         teamLogo = teamLogo.resize((base_width, hsize), Image.Resampling.LANCZOS)
