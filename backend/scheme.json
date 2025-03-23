@@ -1,0 +1,23 @@
+{
+    "date":"23 mars",
+    "18:30":{
+        "divison":"1",
+        "team1":"leo",
+        "team2":"Lodestar esports"
+    },
+    "19:30":{
+        "divison":"1",
+        "team1":"Lodestar esports",
+        "team2":"B2U"
+    },
+    "20:30":{
+        "divison":"1",
+        "team1":"DMG Esports SE",
+        "team2":"LEO"
+    },
+    "21:30":{
+        "divison":"1",
+        "team1":"LEO",
+        "team2":"DMG Esports SE"
+    }
+}
