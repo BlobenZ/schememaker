@@ -4,7 +4,7 @@ import os
 from flask import Flask, send_file, request, send_from_directory
 from flask_cors import CORS, cross_origin
 
-app = Flask(__name__, static_folder="../frontend/app/build", static_url_path="/")
+app = Flask(__name__, static_folder="../build", static_url_path="/")
 cors = CORS(app)
 app.config['CORS_HEADERS'] = 'Content-Type'
 
