@@ -107,7 +107,8 @@ def generate_scheme():
 
     #Base image info
     img_width, img_height = 1400, 1080
-    baseScheme = Image.open('template.png')
+    templatePath = app.static_folder + "/../backend/template.png"
+    baseScheme = Image.open(templatePath)
     draw = ImageDraw.Draw(baseScheme)
 
     #Colors
