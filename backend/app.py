@@ -27,7 +27,7 @@ def getSchedule(file):
     return schedule, date
 
 def getFileFromName(name):
-    path = "./TeamLogos/"
+    path = app.static_folder + "/../backend/TeamLogos/"
     files = [i for i in os.listdir(path) if os.path.isfile(os.path.join(path,i)) and name.lower() in i.lower()]
     return files[0]
 
