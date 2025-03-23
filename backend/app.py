@@ -1,3 +1,4 @@
+import io
 from PIL import Image, ImageFont, ImageDraw
 import json
 import os
@@ -198,10 +199,14 @@ def generate_scheme():
         baseScheme.paste(teamLogo, (1050, logoYPos[stream.index(game)] - (int((float(teamLogo.size[1]))) // 2)), mask=teamLogo)
 
     dateString = date.lower().replace(' ', '-')
-    baseScheme.save(f'{app.static_folder}/../backend/scheme-{dateString}.png')
+    #baseScheme.save(f'{app.static_folder}/../backend/scheme-{dateString}.png')
+    schemeByte = io.BytesIO()
+    baseScheme.save(schemeByte, format=format)
+    schemeByte.seek(0)
 
     try:
-        return send_file(f'{app.static_folder}/../backend/scheme-{dateString}.png', download_name="scheme.png", as_attachment=True)
+        #return send_file(f'{app.static_folder}/../backend/scheme-{dateString}.png', download_name="scheme.png", as_attachment=True)
+        return send_file(schemeByte, mimetype="image/png", download_name="scheme.png")
     except Exception as e:
         print(e)
 
