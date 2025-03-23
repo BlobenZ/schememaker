@@ -77,6 +77,8 @@ def getScheduleFromData(data):
 
 @app.route("/")
 def home():
+    print("Return home page")
+    print(app.static_folder + "/index.html")
     print(send_from_directory(app.static_folder, "index.html"))
     return send_from_directory(app.static_folder, "index.html")
 
