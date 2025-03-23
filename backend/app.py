@@ -85,7 +85,7 @@ def home():
 @app.route("/teamnames/")
 def get_team_names():
     path = "./TeamLogos/"
-    print(os.listdir(path))
+    #print(os.listdir(path))
     print(app.static_folder + "../bnackend/TeamLogos/")
     print(os.listdir(app.static_folder))
     print(os.listdir(app.static_folder + "../bnackend/TeamLogos/"))
