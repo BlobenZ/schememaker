@@ -84,11 +84,7 @@ def home():
 
 @app.route("/teamnames/")
 def get_team_names():
-    path = "./TeamLogos/"
-    #print(os.listdir(path))
-    print(app.static_folder + "/../backend/TeamLogos/")
-    print(os.listdir(app.static_folder))
-    print(os.listdir(app.static_folder + "/../backend/TeamLogos/"))
+    path = app.static_folder + "/../backend/TeamLogos/"
     files = [i for i in os.listdir(path) if os.path.isfile(os.path.join(path,i))]
     print(files)
     return files
